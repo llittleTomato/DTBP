@@ -1,5 +1,5 @@
-import BP.data_loader
-import BP.network2
+import BP.data_loader as data_loader
+import BP.network2 as network2
 
 
 if __name__ == '__main__':
