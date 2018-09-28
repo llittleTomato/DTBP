@@ -1,9 +1,9 @@
-import mnist_loader
-import network2
+from mnist import mnist_loader as mnist_loader
+import BP.network2 as network2
 
 training_data, validation_data, test_data = mnist_loader.load_data_wrapper()
 training_data = list(training_data)
 net = network2.Network([784, 30, 10], cost=network2.CrossEntropyCost)
-#net.large_weight_initializer()
+# net.large_weight_initializer()
 net.SGD(training_data, 30, 10, 0.1, lmbda = 5.0,evaluation_data=validation_data,
     monitor_evaluation_accuracy=True)
