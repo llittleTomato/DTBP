@@ -9,6 +9,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import image
 import csv
+import BP.network2 as network2
+from QT5 import qt5_data_loader
 
 
 class Ui_Form(object):
@@ -282,6 +284,11 @@ class Ui_Form(object):
         data2csv = open('data/inputdata.csv', 'a', newline='')
         csv_write = csv.writer(data2csv, dialect='excel')
         csv_write.writerow(inputdata)
+
+        evaluation_data = list(qt5_data_loader.load_data("data/inputdata.csv"))
+        net = network2.load('dtbp_net.json')
+        out = net.feedforward(evaluation_data[0])
+
 
     def choose_click(self):
         pass
