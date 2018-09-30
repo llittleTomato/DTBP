@@ -1,5 +1,13 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'main.ui'
+#
+# Created by: PyQt5 UI code generator 5.11.2
+#
+# WARNING! All changes made in this file will be lost!
+
 from PyQt5 import QtCore, QtGui, QtWidgets
-import QT5.image
+import image
 import csv
 
 
@@ -31,9 +39,6 @@ class Ui_Form(object):
         self.label_5 = QtWidgets.QLabel(Form)
         self.label_5.setGeometry(QtCore.QRect(60, 575, 91, 20))
         self.label_5.setObjectName("label_5")
-        self.textEdit_jw = QtWidgets.QTextEdit(Form)
-        self.textEdit_jw.setGeometry(QtCore.QRect(60, 460, 80, 30))
-        self.textEdit_jw.setObjectName("textEdit_jw")
         self.textEdit_gz = QtWidgets.QTextEdit(Form)
         self.textEdit_gz.setGeometry(QtCore.QRect(60, 670, 80, 30))
         self.textEdit_gz.setObjectName("textEdit_gz")
@@ -122,9 +127,11 @@ class Ui_Form(object):
         self.comboBox_zh = QtWidgets.QComboBox(Form)
         self.comboBox_zh.setGeometry(QtCore.QRect(60, 180, 80, 30))
         self.comboBox_zh.setObjectName("comboBox_zh")
+        self.comboBox_zh.addItems(["有", "无"])
         self.comboBox_jy = QtWidgets.QComboBox(Form)
         self.comboBox_jy.setGeometry(QtCore.QRect(60, 250, 80, 30))
         self.comboBox_jy.setObjectName("comboBox_jy")
+        self.comboBox_jy.addItems(["有", "无"])
         self.groupBox = QtWidgets.QGroupBox(Form)
         self.groupBox.setGeometry(QtCore.QRect(30, 50, 271, 671))
         self.groupBox.setStyleSheet("border-color: rgb(0, 0, 0);")
@@ -133,9 +140,15 @@ class Ui_Form(object):
         self.comboBox_gl = QtWidgets.QComboBox(self.groupBox)
         self.comboBox_gl.setGeometry(QtCore.QRect(30, 550, 80, 30))
         self.comboBox_gl.setObjectName("comboBox_gl")
+        self.comboBox_gl.addItems(["有", "无"])
         self.comboBox_dk = QtWidgets.QComboBox(self.groupBox)
         self.comboBox_dk.setGeometry(QtCore.QRect(30, 480, 80, 30))
         self.comboBox_dk.setObjectName("comboBox_dk")
+        self.comboBox_dk.addItems(["有", "无"])
+        self.comboBox_jw = QtWidgets.QComboBox(self.groupBox)
+        self.comboBox_jw.setGeometry(QtCore.QRect(30, 415, 80, 30))
+        self.comboBox_jw.setObjectName("comboBox_jw")
+        self.comboBox_jw.addItems(["有", "无"])
         self.groupBox_2 = QtWidgets.QGroupBox(Form)
         self.groupBox_2.setGeometry(QtCore.QRect(840, 170, 121, 351))
         self.groupBox_2.setObjectName("groupBox_2")
@@ -175,7 +188,6 @@ class Ui_Form(object):
         self.textEdit_pl.raise_()
         self.label_4.raise_()
         self.label_5.raise_()
-        self.textEdit_jw.raise_()
         self.textEdit_gz.raise_()
         self.label_6.raise_()
         self.label_7.raise_()
@@ -242,11 +254,34 @@ class Ui_Form(object):
         self.pushButton_js.setText(_translate("Form", "计算"))
 
     def js_click(self):
-        inputdata = [float(self.textEdit_cm.toPlainText()), float(self.textEdit_nx.toPlainText()), 1, 1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+        if self.comboBox_zh.currentText() == '有':
+            zh = 1.0
+        else:
+            zh = 0.0
+        if self.comboBox_jy.currentText() == '有':
+            jy = 1.0
+        else:
+            jy = 0.0
+        if self.comboBox_jw.currentText() == '有':
+            jw = 1.0
+        else:
+            jw = 0.0
+        if self.comboBox_dk.currentText() == '有':
+            dk = 1.0
+        else:
+            dk = 0.0
+        if self.comboBox_gl.currentText() == '有':
+            gl = 1.0
+        else:
+            gl = 0.0
+        inputdata = [float(self.textEdit_cm.toPlainText()), zh, jy, float(self.textEdit_nx.toPlainText()), float(self.textEdit_pl.toPlainText()),
+                     jw, dk, gl, float(self.textEdit_gz.toPlainText()), float(self.textEdit_lh.toPlainText()),
+                     float(self.textEdit_ts.toPlainText()), float(self.textEdit_kr.toPlainText()), float(self.textEdit_zj.toPlainText()),
+                     float(self.textEdit_kzg.toPlainText()), float(self.textEdit_aq.toPlainText()), float(self.textEdit_ms.toPlainText()),
+                     float(self.textEdit_qt.toPlainText()), ]
         data2csv = open('data/inputdata.csv', 'a', newline='')
         csv_write = csv.writer(data2csv, dialect='excel')
         csv_write.writerow(inputdata)
 
     def choose_click(self):
         pass
-

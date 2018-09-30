@@ -107,16 +107,6 @@
     <string>配置管理人员</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_jw">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>460</y>
-     <width>80</width>
-     <height>30</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QTextEdit" name="textEdit_gz">
    <property name="geometry">
     <rect>
@@ -484,6 +474,16 @@
      </rect>
     </property>
    </widget>
+   <widget class="QComboBox" name="comboBox_dk_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>415</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
@@ -605,7 +605,6 @@
   <zorder>textEdit_pl</zorder>
   <zorder>label_4</zorder>
   <zorder>label_5</zorder>
-  <zorder>textEdit_jw</zorder>
   <zorder>textEdit_gz</zorder>
   <zorder>label_6</zorder>
   <zorder>label_7</zorder>
