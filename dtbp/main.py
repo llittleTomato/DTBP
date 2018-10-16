@@ -10,8 +10,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QWidget
 import image
 import csv
-import BP.network2 as network2
-from QT5 import qt5_data_loader
+import qt5_data_loader
+import network2
 
 
 class Ui_Form(object):
@@ -167,9 +167,6 @@ class Ui_Form(object):
 		self.label_22 = QtWidgets.QLabel(self.groupBox_2)
 		self.label_22.setGeometry(QtCore.QRect(30, 70, 67, 17))
 		self.label_22.setObjectName("label_22")
-		self.pushButton_choose = QtWidgets.QPushButton(Form)
-		self.pushButton_choose.setGeometry(QtCore.QRect(400, 660, 89, 41))
-		self.pushButton_choose.setObjectName("pushButton_choose")
 		self.label_23 = QtWidgets.QLabel(Form)
 		self.label_23.setGeometry(QtCore.QRect(520, 560, 141, 41))
 		font = QtGui.QFont()
@@ -179,7 +176,7 @@ class Ui_Form(object):
 		self.label_23.setFont(font)
 		self.label_23.setObjectName("label_23")
 		self.pushButton_js = QtWidgets.QPushButton(Form)
-		self.pushButton_js.setGeometry(QtCore.QRect(610, 660, 89, 41))
+		self.pushButton_js.setGeometry(QtCore.QRect(520, 660, 89, 41))
 		self.pushButton_js.setObjectName("pushButton_js")
 		self.pushButton_js.clicked.connect(self.js_click)
 		self.groupBox_2.raise_()
@@ -219,7 +216,6 @@ class Ui_Form(object):
 		self.label_21.raise_()
 		self.comboBox_zh.raise_()
 		self.comboBox_jy.raise_()
-		self.pushButton_choose.raise_()
 		self.label_23.raise_()
 		self.pushButton_js.raise_()
 
@@ -252,7 +248,6 @@ class Ui_Form(object):
 		self.label_18.setText(_translate("Form", "中"))
 		self.label_20.setText(_translate("Form", "低"))
 		self.label_22.setText(_translate("Form", "困人概率"))
-		self.pushButton_choose.setText(_translate("Form", "选择模型"))
 		self.label_23.setText(_translate("Form", "BP神经网络"))
 		self.pushButton_js.setText(_translate("Form", "计算"))
 
@@ -311,9 +306,6 @@ class Ui_Form(object):
 			self.textEdit_gao.setText('0')
 			self.textEdit_zhong.setText('0')
 			self.textEdit_di.setText('1')
-
-	def choose_click(self):
-		pass
 
 
 if __name__ == '__main__':

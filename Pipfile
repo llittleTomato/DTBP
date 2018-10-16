@@ -6,7 +6,8 @@ name = "pypi"
 [packages]
 numpy = "*"
 py = "*"
-"pyqt5" = "*"
+"PyQt5" = "*"
+pyinstaller = "*"
 
 [dev-packages]
 
